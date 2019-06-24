@@ -1,0 +1,26 @@
+query selectCommodities {
+  description: "Select all commodities"
+  statement:
+      SELECT org.example.trading.Vehicle
+}
+
+query selectCommoditiesByExchange {
+  description: "Select all commodities based on their main exchange"
+  statement:
+      SELECT org.example.trading.Vehicle
+          WHERE (company ==_$company)
+}
+
+query selectCommoditiesByOwner {
+  description: "Select all commodities based on their owner"
+  statement:
+      SELECT org.example.trading.Vehicle
+          WHERE (owner == _$owner)
+}
+
+query getItemHistory {
+  description: "see all of the participants that have worked with a particular Item"
+  statement:
+  		SELECT org.example.trading.Trade
+  			WHERE (chassis == _$chassis)
+}
